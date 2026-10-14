@@ -26,8 +26,9 @@
     });
   }
 
-  // The four rules: each row's progress follows the scroll (its top from 90% to 40% of the screen) and never goes back.
-  // The box ticks at 25%, then the row's visual plays out with the rest of the scroll.
+  // The four rules: each row's progress follows the scroll (its top from 95% to 25% of the screen, most of a screen's
+  // worth of scrolling, so a quick flick still shows it) and never goes back. The box ticks at 20%, then the row's
+  // visual plays out with the rest of the scroll.
   var rules = [].slice.call(document.querySelectorAll('.checklist .rule'));
   if (rules.length) {
     root.classList.add('js-ticks');
@@ -35,7 +36,7 @@
       var best = 0, figs = [].slice.call(row.querySelectorAll('[data-count]'));
       var set = function (k, v) { row.style.setProperty(k, clamp(v).toFixed(3)); };
       var paint = function (p) {
-        if (p >= 0.25) row.classList.add('is-ticked');
+        if (p >= 0.2) row.classList.add('is-ticked');
         for (var k = 0; k < 4; k++) set('--a' + (k + 1), (p - 0.2 - k * 0.15) / 0.3);
         set('--b', (p - 0.3) / 0.6);
         for (var c = 0; c < 3; c++) set('--c' + (c + 1), (p - 0.3 - c * 0.2) / 0.3);
@@ -47,7 +48,7 @@
       };
       jobs.push(function (vh) {
         var r = row.getBoundingClientRect();
-        var p = clamp((vh * 0.9 - r.top) / (vh * 0.5));
+        var p = clamp((vh * 0.95 - r.top) / (vh * 0.7));
         if (p > best) { best = p; paint(best); }
       });
       paint(0);
@@ -56,7 +57,7 @@
   }
 
   // Stakes: the stack builds with the scroll, bottom-up (Files, Records, Closes, then Sees ahead), then the brackets draw.
-  // Progress runs from the stack entering the bottom of the screen (top at 90%) to its top reaching 35%, and never
+  // Progress runs from the stack entering the bottom of the screen (top at 95%) to its top reaching 30%, and never
   // goes back down, so the finished stack stays put when the visitor scrolls up again.
   var stack = document.querySelector('.stack');
   if (stack) {
@@ -72,7 +73,7 @@
     };
     jobs.push(function (vh) {
       var r = stack.getBoundingClientRect();
-      var p = clamp((vh * 0.9 - r.top) / (vh * 0.55));
+      var p = clamp((vh * 0.95 - r.top) / (vh * 0.65));
       if (p > best) { best = p; paint(best); }
     });
     paint(0);
