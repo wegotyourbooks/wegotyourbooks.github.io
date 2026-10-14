@@ -26,15 +26,33 @@
     });
   }
 
-  // The four rules tick as each row reaches the reading line.
+  // The four rules: each row's progress follows the scroll (its top from 90% to 40% of the screen) and never goes back.
+  // The box ticks at 25%, then the row's visual plays out with the rest of the scroll.
   var rules = [].slice.call(document.querySelectorAll('.checklist .rule'));
-  if (rules.length && 'IntersectionObserver' in window) {
+  if (rules.length) {
     root.classList.add('js-ticks');
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-ticked'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -45% 0px', threshold: 0 });   // a row ticks when it reaches the middle of the screen
-    rules.forEach(function (r) { io.observe(r); });
-    setTimeout(function () { rules.forEach(function (r) { r.classList.add('is-ticked'); }); }, 15000);
+    rules.forEach(function (row) {
+      var best = 0, figs = [].slice.call(row.querySelectorAll('[data-count]'));
+      var set = function (k, v) { row.style.setProperty(k, clamp(v).toFixed(3)); };
+      var paint = function (p) {
+        if (p >= 0.25) row.classList.add('is-ticked');
+        for (var k = 0; k < 4; k++) set('--a' + (k + 1), (p - 0.2 - k * 0.15) / 0.3);
+        set('--b', (p - 0.3) / 0.6);
+        for (var c = 0; c < 3; c++) set('--c' + (c + 1), (p - 0.3 - c * 0.2) / 0.3);
+        figs.forEach(function (dd) {
+          var final = dd.getAttribute('data-count'), target = Number(final.replace(/[^0-9]/g, ''));
+          var q = clamp((p - 0.3) / 0.6);
+          dd.textContent = q >= 1 ? final : '$' + Math.round(target * (1 - Math.pow(1 - q, 3))).toLocaleString('en-US');
+        });
+      };
+      jobs.push(function (vh) {
+        var r = row.getBoundingClientRect();
+        var p = clamp((vh * 0.9 - r.top) / (vh * 0.5));
+        if (p > best) { best = p; paint(best); }
+      });
+      paint(0);
+      setTimeout(function () { best = 1; paint(1); }, 15000);
+    });
   }
 
   // Stakes: the stack builds with the scroll, bottom-up (Files, Records, Closes, then Sees ahead), then the brackets draw.
@@ -59,29 +77,6 @@
     });
     paint(0);
     setTimeout(function () { best = 1; paint(1); }, 15000);
-  }
-
-  // Hiring gate figures count up when their row ticks; the final text is always the original string.
-  function countUp(dd) {
-    var final = dd.getAttribute('data-count'), target = Number(final.replace(/[^0-9]/g, ''));
-    var t0 = null, dur = 1100;
-    function step(t) {
-      if (!t0) t0 = t;
-      var p = Math.min(1, (t - t0) / dur), v = Math.round(target * (1 - Math.pow(1 - p, 3)));
-      dd.textContent = p < 1 ? '$' + v.toLocaleString('en-US') : final;
-      if (p < 1) raf(step);
-    }
-    raf(step);
-  }
-  if (rules.length && 'MutationObserver' in window) {
-    var counted = false;
-    var gate = document.getElementById('rule-3');
-    if (gate) new MutationObserver(function () {
-      if (!counted && gate.classList.contains('is-ticked')) {
-        counted = true;
-        [].forEach.call(gate.querySelectorAll('[data-count]'), countUp);
-      }
-    }).observe(gate, { attributes: true, attributeFilter: ['class'] });
   }
 
   // Before and After: the After panel wipes in from the right while the section crosses the
