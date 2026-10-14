@@ -7,7 +7,8 @@
   var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) return;
 
-  var raf = window.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+  // bound, so Safari accepts the call (an unbound requestAnimationFrame throws there)
+  var raf = window.requestAnimationFrame ? window.requestAnimationFrame.bind(window) : function (f) { return setTimeout(f, 16); };
   var clamp = function (v) { return Math.max(0, Math.min(1, v)); };
   var jobs = [];
   var queued = false;
@@ -31,7 +32,7 @@
     root.classList.add('js-ticks');
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-ticked'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -28% 0px', threshold: 0 });
+    }, { rootMargin: '0px 0px -45% 0px', threshold: 0 });   // a row ticks when it reaches the middle of the screen
     rules.forEach(function (r) { io.observe(r); });
     setTimeout(function () { rules.forEach(function (r) { r.classList.add('is-ticked'); }); }, 15000);
   }
@@ -42,7 +43,7 @@
     root.classList.add('js-stack');
     var so = new IntersectionObserver(function (es) {
       if (es[0].isIntersecting) { stack.classList.add('is-built'); so.disconnect(); }
-    }, { threshold: 0.2 });
+    }, { rootMargin: '0px 0px -40% 0px', threshold: 0 });   // builds once the stack is well into view
     so.observe(stack);
     setTimeout(function () { stack.classList.add('is-built'); }, 15000);
   }
@@ -50,7 +51,7 @@
   // Hiring gate figures count up when their row ticks; the final text is always the original string.
   function countUp(dd) {
     var final = dd.getAttribute('data-count'), target = Number(final.replace(/[^0-9]/g, ''));
-    var t0 = null, dur = 700;
+    var t0 = null, dur = 1100;
     function step(t) {
       if (!t0) t0 = t;
       var p = Math.min(1, (t - t0) / dur), v = Math.round(target * (1 - Math.pow(1 - p, 3)));

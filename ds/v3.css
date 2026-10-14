@@ -304,23 +304,23 @@
 /* Motion tests (v3.js arms these; without JS or with reduced motion every element stays in its finished state). */
 
 /* Stakes: the stack builds bottom-up (Files, Records, Closes, Decides), then the brackets draw down. */
-.js-stack .v3 .stack .layer { opacity: 0; transform: translateY(-28px); transition: opacity .45s var(--ease), transform .45s var(--ease); transition-delay: calc(var(--i, 0) * .12s); }
-.js-stack .v3 .stack .bracket::before { transform: scaleY(0); transform-origin: top center; transition: transform .5s var(--ease) .55s; }
-.js-stack .v3 .stack .bracket--cpa::before { transition-delay: .2s; }
+.js-stack .v3 .stack .layer { opacity: 0; transform: translateY(-36px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: calc(var(--i, 0) * .2s); }
+.js-stack .v3 .stack .bracket::before { transform: scaleY(0); transform-origin: top center; transition: transform .7s var(--ease) .9s; }
+.js-stack .v3 .stack .bracket--cpa::before { transition-delay: .3s; }
 .js-stack .v3 .stack.is-built .layer { opacity: 1; transform: none; }
 .js-stack .v3 .stack.is-built .bracket::before { transform: none; }
 
 /* What we run: each rule's visual moves as its box ticks. */
-.js-ticks .v3 .alloc-bar span { transform-origin: left center; transition: transform .45s var(--ease); }
-.js-ticks .v3 .alloc-bar span:nth-child(2) { transition-delay: .15s; }
-.js-ticks .v3 .alloc-bar span:nth-child(3) { transition-delay: .3s; }
-.js-ticks .v3 .alloc-bar span:nth-child(4) { transition-delay: .45s; }
+.js-ticks .v3 .alloc-bar span { transform-origin: left center; transition: transform .6s var(--ease); }
+.js-ticks .v3 .alloc-bar span:nth-child(2) { transition-delay: .25s; }
+.js-ticks .v3 .alloc-bar span:nth-child(3) { transition-delay: .5s; }
+.js-ticks .v3 .alloc-bar span:nth-child(4) { transition-delay: .75s; }
 .js-ticks .v3 .rule:not(.is-ticked) .alloc-bar span { transform: scaleX(0); }
-.js-ticks .v3 .band-fill { transition: transform .7s var(--ease), opacity .3s var(--ease); }
+.js-ticks .v3 .band-fill { transition: transform 1s var(--ease) .2s, opacity .4s var(--ease) .2s; }
 .js-ticks .v3 .rule:not(.is-ticked) .band-fill { transform: translateX(-300%); opacity: 0; }
-.js-ticks .v3 .rows dl > div { transition: opacity .35s var(--ease), transform .35s var(--ease); }
-.js-ticks .v3 .rows dl > div:nth-child(2) { transition-delay: .2s; }
-.js-ticks .v3 .rows dl > div:nth-child(3) { transition-delay: .4s; }
+.js-ticks .v3 .rows dl > div { transition: opacity .45s var(--ease), transform .45s var(--ease); }
+.js-ticks .v3 .rows dl > div:nth-child(2) { transition-delay: .35s; }
+.js-ticks .v3 .rows dl > div:nth-child(3) { transition-delay: .7s; }
 .js-ticks .v3 #rule-4:not(.is-ticked) .rows dl > div { opacity: 0; transform: translateX(-12px); }
 
 /* Clients: logos scroll in an endless loop (CSS only; the second list is a decorative copy, aria-hidden, blank alt).
