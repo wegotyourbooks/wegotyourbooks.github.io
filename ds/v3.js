@@ -80,6 +80,31 @@
     setTimeout(function () { best = 1; paint(1); }, 15000);
   }
 
+  // Proof: the three stat cards. Each gold bar draws and its figure counts up as the card scrolls in (top from 95% to
+  // 45% of the screen), never going back. Only the number moves; its prefix and suffix ($, +) stay put, and at the end the
+  // exact original text is restored.
+  var stats = [].slice.call(document.querySelectorAll('.result--stat'));
+  if (stats.length) {
+    root.classList.add('js-tally');
+    stats.forEach(function (card) {
+      var fig = card.querySelector('[data-tally]'), final = fig ? fig.textContent : '';
+      var m = final.match(/^(\D*)([\d,]+)(.*)$/), target = m ? Number(m[2].replace(/,/g, '')) : 0, best = 0;
+      var paint = function (p) {
+        card.style.setProperty('--g', clamp(p / 0.7).toFixed(3));
+        if (!m) return;
+        var q = clamp((p - 0.1) / 0.8);
+        fig.textContent = q >= 1 ? final : m[1] + Math.round(target * (1 - Math.pow(1 - q, 3))).toLocaleString('en-US') + m[3];
+      };
+      jobs.push(function (vh) {
+        var r = card.getBoundingClientRect();
+        var p = clamp((vh * 0.95 - r.top) / (vh * 0.5));
+        if (p > best) { best = p; paint(best); }
+      });
+      paint(0);
+      setTimeout(function () { best = 1; paint(1); }, 15000);
+    });
+  }
+
   // Before and After: the After panel wipes in from the right while the section crosses the
   // viewport. Dragging the range input takes over from scroll.
   var box = document.querySelector('.compare');

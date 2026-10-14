@@ -138,8 +138,14 @@
 
 /* 8 proof */
 .v3 .results { margin-top: var(--s-7); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--s-7); }
-.v3 .results > div { border-top: 1px solid var(--line); padding: 28px 0 32px; }
-.v3 .result-big { font-family: var(--font-display); font-stretch: var(--display-stretch); font-weight: var(--display-weight); letter-spacing: var(--tracking-display); font-size: clamp(30px, 3vw, 42px); line-height: 1.1; color: var(--cobalt); }
+.v3 .results > div { border-top: 1px solid var(--line); padding: 28px 0 32px; order: 2; }
+.v3 .result-big { font-family: var(--font-display); font-stretch: var(--display-stretch); font-weight: var(--display-weight); letter-spacing: var(--tracking-display); font-size: clamp(24px, 2.2vw, 30px); line-height: 1.1; color: var(--cobalt); }
+/* The three measured results lead as a stat row: a gold bar on top (gold as a shape, never as text) and the biggest
+   figures on the page section. The qualitative results follow as a quieter row (CSS order; each card stands alone). */
+.v3 .results > .result--stat { order: 1; position: relative; border-top: 0; padding: 36px 0 var(--s-7); }
+.v3 .result--stat::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--gold); border-radius: var(--r-pill); transform-origin: left center; }
+.v3 .result--stat .result-big { font-size: clamp(44px, 4.2vw, 64px); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.v3 .result--stat .unit { font-size: 0.4em; letter-spacing: 0; }
 .v3 .results p + p { margin-top: 10px; }
 .v3 .result-who { font-weight: 700; }
 .v3 .videos { margin-top: var(--s-8); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6); }
@@ -322,6 +328,9 @@
 .js-ticks .v3 #rule-4 .rows dl > div:nth-child(1) { opacity: var(--c1, 0); transform: translateX(calc((1 - var(--c1, 0)) * -16px)); }
 .js-ticks .v3 #rule-4 .rows dl > div:nth-child(2) { opacity: var(--c2, 0); transform: translateX(calc((1 - var(--c2, 0)) * -16px)); }
 .js-ticks .v3 #rule-4 .rows dl > div:nth-child(3) { opacity: var(--c3, 0); transform: translateX(calc((1 - var(--c3, 0)) * -16px)); }
+
+/* Proof: each stat's gold bar draws left to right and its figure counts up (v3.js sets --g, 0 to 1, never decreasing). */
+.js-tally .v3 .result--stat::before { transform: scaleX(var(--g, 0)); }
 
 /* Clients: logos scroll in an endless loop (CSS only; the second list is a decorative copy, aria-hidden, blank alt).
    Pauses on hover. With reduced motion the copy is hidden and the first list sits as a static, wrapping row. */
