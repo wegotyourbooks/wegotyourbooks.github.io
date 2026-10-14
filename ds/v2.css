@@ -1,0 +1,12 @@
+/* WGYB site v2 shared layer. Tokens only, no raw color. Requires tokens.css and components.css. */
+html { scroll-padding-top: calc(var(--header-h) + 16px); }
+body { font-variant-numeric: tabular-nums; }
+
+/* Scroll reveal: translate and opacity, short. Only armed when v2.js adds .rv to <html>. */
+.rv .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.rv .reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .rv .reveal { opacity: 1; transform: none; } }
+
+/* Line draw: a rule that scales in once. */
+.rv .draw { transform: scaleX(0); transform-origin: left center; transition: transform .8s var(--ease); }
+.rv .draw.is-in { transform: scaleX(1); }

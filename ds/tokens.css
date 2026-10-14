@@ -1,0 +1,91 @@
+/*
+ * WGYB design tokens. The only file in the system allowed to hold raw color values.
+ * Every other CSS file and every page uses var(--name).
+ * Rules for using these live in DESIGN.md.
+ */
+:root {
+  /* Brand colors */
+  --cobalt: #0000B3;
+  --cobalt-deep: #000080;
+  --gold: #FFB400;
+  --charcoal: #2B2B2B;
+  --sky: #A9C4FF;
+
+  /* Logo orange. Logo artwork only, never UI or text.
+     Fallback if contrast on a ground fails: #E06A00 (set --logo-orange to it). */
+  --logo-orange: #F28C00;
+
+  /* Grounds */
+  --white: #FFFFFF;
+  --cool: #F4F5F8;
+  --warm: #FAF6EC;
+  --tint: #EEF0FF;
+
+  /* Supporting text and line colors */
+  --muted: #53565C;        /* secondary text on light grounds, 7:1 on white */
+  --muted-dark: #C9D4F5;   /* secondary text on cobalt, 9:1 */
+  --muted-charcoal: #D5D7DC; /* secondary text on charcoal */
+  --rule: rgba(43, 43, 43, 0.16);
+  --rule-dark: rgba(255, 255, 255, 0.28);
+  --error: #B3261E;        /* form errors on light grounds */
+  --error-dark: #FFD1CC;   /* form errors on dark grounds */
+
+  /* Fonts */
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-text: 'Hanken Grotesk', system-ui, sans-serif;
+  --display-stretch: 125%;
+  --display-weight: 800;
+  --display-weight-max: 900;
+
+  /* Type scale. Body is 18px. Nothing renders under 16px. */
+  --fs-body: 18px;
+  --fs-small: 16px;
+  --fs-lede: clamp(18px, 1.5vw, 22px);
+  --fs-h3: clamp(24px, 2.4vw, 34px);
+  --fs-h2: clamp(30px, 4.2vw, 56px);
+  --fs-h1: clamp(34px, 6.4vw, 92px);
+  --lh-body: 1.6;
+  --lh-tight: 1.05;
+  --tracking-display: -0.025em;
+
+  /* Spacing scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 72px;
+  --s-9: 112px;
+  --section-y: clamp(56px, 9vw, 112px);
+  --gutter: clamp(20px, 5vw, 72px);
+
+  /* Radius */
+  --r-sm: 4px;
+  --r-md: 10px;
+  --r-pill: 999px;
+
+  /* Container widths */
+  --w-text: 720px;
+  --w-wide: 1240px;
+
+  /* Header logo height (rendered) */
+  --logo-h: 68px;
+  --header-h: 108px;
+
+  /* Focus ring */
+  --focus-width: 3px;
+  --focus-offset: 3px;
+
+  /* Motion */
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --dur: .25s;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --logo-h: 56px;
+    --header-h: 84px;
+  }
+}
