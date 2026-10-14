@@ -8,10 +8,11 @@ h2 { max-width: 20em; }
 
 /* header */
 .site-header .bar { min-height: var(--header-h); }
-.nav-logo { font-family: var(--font-display); font-stretch: var(--display-stretch); font-weight: var(--display-weight-max); font-size: clamp(18px, 2.6vw, 26px); letter-spacing: var(--tracking-display); line-height: 1.05; color: var(--charcoal); text-decoration: none; }
-.nav-logo:hover { color: var(--cobalt); text-decoration: none; }
+/* Header logo: the orange horizontal lockup, same size as the main site (--logo-h: 68px desktop, 56px phone). */
+.nav-logo { display: block; flex: none; line-height: 0; text-decoration: none; }
+.nav-logo-img { display: block; height: var(--logo-h); width: calc(var(--logo-h) * 2.3256); background: url(/agencyos/ds/assets/logo-horizontal-orange.png) no-repeat left center / contain; }
 .site-header .btn.nav-cta { flex: none; }
-@media (max-width: 420px) { .nav-logo { font-size: 17px; } .site-header .btn { padding: 10px 14px; } }
+@media (max-width: 420px) { .site-header .btn { padding: 10px 14px; } }
 
 /* hero */
 .hero { padding-block: clamp(48px, 8vw, 112px); }

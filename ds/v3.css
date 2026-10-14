@@ -304,11 +304,8 @@
 /* Motion tests (v3.js arms these; without JS or with reduced motion every element stays in its finished state). */
 
 /* Stakes: the stack builds bottom-up (Files, Records, Closes, Decides), then the brackets draw down. */
-.js-stack .v3 .stack .layer { opacity: 0; transform: translateY(-36px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: calc(var(--i, 0) * .2s); }
-.js-stack .v3 .stack .bracket::before { transform: scaleY(0); transform-origin: top center; transition: transform .7s var(--ease) .9s; }
-.js-stack .v3 .stack .bracket--cpa::before { transition-delay: .3s; }
-.js-stack .v3 .stack.is-built .layer { opacity: 1; transform: none; }
-.js-stack .v3 .stack.is-built .bracket::before { transform: none; }
+.js-stack .v3 .stack .layer { opacity: var(--p, 0); transform: translateY(calc((1 - var(--p, 0)) * -36px)); }
+.js-stack .v3 .stack .bracket::before { transform: scaleY(var(--pb, 0)); transform-origin: top center; }
 
 /* What we run: each rule's visual moves as its box ticks. */
 .js-ticks .v3 .alloc-bar span { transform-origin: left center; transition: transform .6s var(--ease); }

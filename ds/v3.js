@@ -37,15 +37,28 @@
     setTimeout(function () { rules.forEach(function (r) { r.classList.add('is-ticked'); }); }, 15000);
   }
 
-  // Stakes: the stack builds once, when it comes into view.
+  // Stakes: the stack builds with the scroll, bottom-up (Files, Records, Closes, then Sees ahead), then the brackets draw.
+  // Progress runs from the stack entering the bottom of the screen (top at 90%) to its top reaching 35%, and never
+  // goes back down, so the finished stack stays put when the visitor scrolls up again.
   var stack = document.querySelector('.stack');
-  if (stack && 'IntersectionObserver' in window) {
+  if (stack) {
     root.classList.add('js-stack');
-    var so = new IntersectionObserver(function (es) {
-      if (es[0].isIntersecting) { stack.classList.add('is-built'); so.disconnect(); }
-    }, { rootMargin: '0px 0px -40% 0px', threshold: 0 });   // builds once the stack is well into view
-    so.observe(stack);
-    setTimeout(function () { stack.classList.add('is-built'); }, 15000);
+    var layers = [].slice.call(stack.querySelectorAll('.layer')), brackets = [].slice.call(stack.querySelectorAll('.bracket'));
+    var best = 0;
+    var paint = function (p) {
+      layers.forEach(function (l) {
+        var i = Number(l.style.getPropertyValue('--i')) || 0;            // 0 = Files (first) ... 3 = Sees ahead (last)
+        l.style.setProperty('--p', clamp((p - i * 0.17) / 0.32).toFixed(3));
+      });
+      brackets.forEach(function (b) { b.style.setProperty('--pb', clamp((p - 0.72) / 0.28).toFixed(3)); });
+    };
+    jobs.push(function (vh) {
+      var r = stack.getBoundingClientRect();
+      var p = clamp((vh * 0.9 - r.top) / (vh * 0.55));
+      if (p > best) { best = p; paint(best); }
+    });
+    paint(0);
+    setTimeout(function () { best = 1; paint(1); }, 15000);
   }
 
   // Hiring gate figures count up when their row ticks; the final text is always the original string.
