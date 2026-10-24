@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q4N3Q96PX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0Q4N3Q96PX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fathom QBO Setup for Marketing Agencies | We Got Your Books</title>
+<meta name="description" content="How we set up Fathom on QuickBooks Online for agencies: the chart of accounts it needs, the KPIs we build, the monthly rhythm and common mistakes.">
+<link rel="canonical" href="https://wegotyourbooks.org/fathom-quickbooks-for-agencies/">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="We Got Your Books">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://wegotyourbooks.org/fathom-quickbooks-for-agencies/">
+<meta property="og:title" content="Fathom QBO Setup for Marketing Agencies | We Got Your Books">
+<meta property="og:description" content="How we set up Fathom on QuickBooks Online for agencies: the chart of accounts it needs, the KPIs we build, the monthly rhythm and common mistakes.">
+<meta property="og:image" content="https://wegotyourbooks.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fathom QBO Setup for Marketing Agencies | We Got Your Books">
+<meta name="twitter:description" content="How we set up Fathom on QuickBooks Online for agencies: the chart of accounts it needs, the KPIs we build, the monthly rhythm and common mistakes.">
+<meta name="twitter:image" content="https://wegotyourbooks.org/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/ds/tokens.css?v=3af978792a">
+<link rel="stylesheet" href="/ds/components.css?v=e032a02945">
+<link rel="stylesheet" href="/ds/v2.css?v=0bae53d89b">
+<link rel="stylesheet" href="/ds/chrome.css?v=8877c543b5">
+<link rel="stylesheet" href="/ds/v3.css?v=160a948618">
+<link rel="stylesheet" href="/ds/pages-v3.css?v=7dff4f00eb">
+<script src="/ds/book.js?v=8c6389b87b" defer></script>
+<script src="/ds/v2.js?v=c450318967" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Fathom on QuickBooks Online for agencies",
+  "description": "How we set up Fathom on QuickBooks Online for agencies: the chart of accounts it needs, the KPIs we build, the monthly rhythm and common mistakes.",
+  "url": "https://wegotyourbooks.org/fathom-quickbooks-for-agencies/",
+  "serviceType": "Fathom QuickBooks Online setup for agencies",
+  "category": "Accounting and financial advisory for marketing agencies",
+  "provider": {
+    "@type": "Organization",
+    "name": "We Got Your Books",
+    "@id": "https://wegotyourbooks.org/#organization",
+    "url": "https://wegotyourbooks.org/"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "Marketing and creative agencies doing $500K to $5M in revenue"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://wegotyourbooks.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Fathom and QuickBooks"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Fathom work with QuickBooks Online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Fathom reads directly from QuickBooks Online and builds dashboards, KPIs and cash flow forecasts from it. QuickBooks stays the single source of truth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which KPIs should an agency track in Fathom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We build six groups: revenue (including mix by service line), profit (gross and operating margin, break-even, margin of safety), people cost, cash and runway, receivables and AR days, and year-to-date comparison against last year and forecast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What has to be in place in QuickBooks before Fathom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reconciled accounts and a chart of accounts that separates revenue by service line, pass-throughs, delivery cost, overhead and owner pay. Without those splits Fathom can't show gross margin or people cost correctly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often does the Fathom dashboard update?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With each month-end close. On the Scale tier it is joined by a weekly financial report."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Fathom forecast cash flow from QuickBooks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Fathom builds cash flow forecasts from the QuickBooks Online data alongside the dashboards, so the forecast starts from the same closed books as the reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I get my own Fathom login?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You get your own login, not a PDF. The dashboard is included on Growth and Scale, and is a $200 a month add-on on Starter."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body class="v3">
+<nav class="site-header" aria-label="Main">
+  <div class="bar">
+    <a href="/" class="nav-logo"><span class="logo-art nav-logo-img" role="img" aria-label="We Got Your Books"></span></a>
+    <ul class="nav-links">
+      <li><a href="/agencyos/">Free OS</a></li>
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+    </ul>
+    <a href="https://calendly.com/team-a9m/30min" target="_blank" class="btn nav-btn" data-book>Book a call</a>
+  </div>
+</nav>
+
+<main id="main">
+<section class="page-hero section ground-warm">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="crumb-sep" aria-hidden="true">/</span><span aria-current="page">Fathom and QuickBooks</span></nav>
+    <h1>Fathom on QuickBooks Online, set up for agencies</h1>
+    <p class="lede">How we connect Fathom to QuickBooks Online for marketing and creative agencies: the chart of accounts it depends on, the KPIs we build, the monthly rhythm, and the setup mistakes that make a dashboard lie.</p>
+    <ul class="proof-line"><li><b>QuickBooks</b> as the source</li><li><b>Fathom</b> as the reporting layer</li><li><b>Updated</b> with every close</li></ul>
+  </div>
+</section>
+
+<section class="section ground-white">
+  <div class="container">
+    <div class="short reveal">
+      <p class="short-t">The short version</p>
+      <ul class="ruled-list">
+        <li><strong>QuickBooks Online is the single source of truth.</strong> Fathom reads from it and sends nothing back.</li>
+        <li><strong>Fathom only shows what QuickBooks is structured to say,</strong> so the chart of accounts comes before the dashboard.</li>
+        <li><strong>We build six groups of KPIs:</strong> revenue, profit, people, cash, receivables and comparison, then extend them per client.</li>
+        <li><strong>The dashboard updates with every close,</strong> and you get your own Fathom login, not a PDF.</li>
+      </ul>
+    </div>
+    <div class="ask">
+      <div class="ask-text"><p class="ask-t">Want to see one built on real books?</p>
+      <p class="ask-s">We'll walk through a live client dashboard on the call, numbers blurred.</p></div>
+      <div class="ask-act"><a href="https://calendly.com/team-a9m/30min" target="_blank" rel="noopener" class="btn" data-book>Book a call</a>
+      <a class="text-link" href="/agencyos/">Or take the free playbook first</a></div>
+    </div>
+    <figure class="shot reveal">
+      <img src="/ds/img/fathom-revenue-trend.png" alt="Fathom revenue dashboard from a client" width="800" height="345" loading="lazy">
+      <figcaption>Real client dashboard.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section ground-cool">
+  <div class="container">
+    <h2 class="reveal">Why Fathom sits on top of QuickBooks</h2>
+    <p>QuickBooks Online holds the books: every transaction, reconciliation and journal entry. It is standard with CPAs and buyers, and the rest of the finance stack, payroll and spend cards included, syncs into it. What it doesn't do well is answer an owner's question in five minutes.</p>
+    <p>Fathom is the reporting layer. It reads directly from QuickBooks Online and turns the closed books into dashboards, KPIs and cash flow forecasts built for owners who aren't accountants. Because it only reads, there is one set of numbers: the dashboard, the tax return and the forecast all start from the same ledger.</p>
+    <p>The full stack and how it connects is in the <a href="/agency-financial-os/finance-stack/">agency financial tech stack</a>.</p>
+  </div>
+</section>
+
+<section class="section ground-white">
+  <div class="container">
+    <h2 class="reveal">The chart of accounts Fathom depends on</h2>
+    <p>Fathom can only chart what QuickBooks separates. If delivery cost and overhead share an account, no dashboard can show gross margin. These are the splits we set up in QuickBooks before Fathom is connected.</p>
+    <div class="table-wrap reveal">
+    <table class="ruled-table">
+      <thead><tr><th scope="col">Account group</th><th scope="col">What it separates</th><th scope="col">What it lets Fathom show</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Account group">Revenue by service line</td><td data-label="What it separates">Each offer in its own income account</td><td data-label="What it lets Fathom show">Revenue mix, and which line carries the agency</td></tr>
+        <tr><td data-label="Account group">Pass-throughs</td><td data-label="What it separates">Rebilled media and production, income and cost</td><td data-label="What it lets Fathom show">Agency income without inflated revenue</td></tr>
+        <tr><td data-label="Account group">Delivery cost</td><td data-label="What it separates">Team and contractors on client work</td><td data-label="What it lets Fathom show">Gross profit margin and people cost</td></tr>
+        <tr><td data-label="Account group">Overhead</td><td data-label="What it separates">Everything that runs the agency</td><td data-label="What it lets Fathom show">Operating profit margin and break-even point</td></tr>
+        <tr><td data-label="Account group">Owner pay</td><td data-label="What it separates">W-2 wages apart from distributions</td><td data-label="What it lets Fathom show">Owner pay against its benchmark</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Why each split matters, with cash versus accrual and retainers billed ahead, is covered in <a href="/accounting-for-marketing-agencies/">accounting for marketing agencies</a>.</p>
+  </div>
+</section>
+
+<section class="section ground-cool">
+  <div class="container">
+    <h2 class="reveal">The Fathom KPIs we build for agencies</h2>
+    <p>The standard build has six groups. It is a starting point; the useful dashboards get extended with whatever question the owner keeps asking.</p>
+    <div class="table-wrap reveal">
+    <table class="ruled-table">
+      <thead><tr><th scope="col">Group</th><th scope="col">KPIs</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Group">Revenue</td><td data-label="KPIs">Month actual, target, rolling 12-month average, prior month, and mix by service line</td></tr>
+        <tr><td data-label="Group">Profit</td><td data-label="KPIs">Gross profit margin, operating profit margin, break-even point, margin of safety</td></tr>
+        <tr><td data-label="Group">People</td><td data-label="KPIs">People cost in dollars and as a percentage of revenue, with a rolling average</td></tr>
+        <tr><td data-label="Group">Cash</td><td data-label="KPIs">Cash on hand, operating cash flow, months of fixed-cost runway</td></tr>
+        <tr><td data-label="Group">Receivables</td><td data-label="KPIs">Accounts receivable balance and AR days</td></tr>
+        <tr><td data-label="Group">Comparison</td><td data-label="KPIs">Year to date this year against last year against forecast</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Clients have added a service-line share chart against a target, a consolidated view of billable pass-through spend against the income that covers it, and margin per project built from tracked hours. The formulas and benchmark ranges behind each KPI are on <a href="/agency-financial-kpis/">agency financial KPIs</a>, and the dashboard itself is on <a href="/agency-financial-dashboard/">the agency KPI dashboard</a>.</p>
+  </div>
+</section>
+
+<section class="section ground-white">
+  <div class="container">
+    <h2 class="reveal">What a Fathom setup takes, in order</h2>
+    <p>The order is the whole trick. Each step depends on the one before it, and skipping ahead is how most dashboards end up wrong.</p>
+    <ol class="numsteps reveal">
+      <li><span class="step-n">1</span><div><p class="step-t">Reconcile QuickBooks</p><p class="step-d">Every bank, card and processor account matched to its statement through the most recent month.</p></div></li>
+      <li><span class="step-n">2</span><div><p class="step-t">Restructure the chart of accounts</p><p class="step-d">Service lines, pass-throughs, delivery cost, overhead and owner pay each in their own accounts, as in the table above.</p></div></li>
+      <li><span class="step-n">3</span><div><p class="step-t">Connect Fathom and map the accounts</p><p class="step-d">Fathom reads the restructured accounts, so gross margin, people cost and operating profit calculate on the right lines.</p></div></li>
+      <li><span class="step-n">4</span><div><p class="step-t">Set targets from your goals</p><p class="step-d">Targets come from the goals set in the Agency Financial Audit month and the published benchmarks, not from defaults.</p></div></li>
+      <li><span class="step-n">5</span><div><p class="step-t">Add the charts you keep asking for</p><p class="step-d">A service-line share, pass-throughs against their income, margin per project: whatever question comes up every month.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section ground-cool">
+  <div class="container">
+    <h2 class="reveal">The monthly reporting rhythm</h2>
+    <ol class="numsteps reveal">
+      <li><span class="step-n">1</span><div><p class="step-t">The books close</p><p class="step-d">Every account reconciled and the P&amp;L closed by the 10th business day on Growth and Scale, the 15th on Starter.</p></div></li>
+      <li><span class="step-n">2</span><div><p class="step-t">Fathom refreshes</p><p class="step-d">The dashboard reads the closed month from QuickBooks Online, so it never shows a half-finished month as if it were final.</p></div></li>
+      <li><span class="step-n">3</span><div><p class="step-t">The numbers get explained</p><p class="step-d">On Growth, a Loom walkthrough in the months between quarterly calls. On Scale, a call every month plus a weekly financial report.</p></div></li>
+      <li><span class="step-n">4</span><div><p class="step-t">Targets stay current</p><p class="step-d">Targets are set in the Agency Financial Audit month and updated when your goals change, two or three times a year.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section ground-white">
+  <div class="container">
+    <h2 class="reveal">Common Fathom and QuickBooks setup mistakes</h2>
+    <div class="list-block reveal">
+      <ul class="ruled-list">
+        <li><strong>Connecting Fathom before the chart of accounts is fixed.</strong> The dashboard looks finished and shows the wrong margin with total confidence.</li>
+        <li><strong>Pass-throughs counted as revenue.</strong> A big media month makes the agency look larger and more profitable than it is.</li>
+        <li><strong>Contractors in overhead.</strong> Gross margin reads high, overhead reads bloated, and the people cost chart misses part of the team.</li>
+        <li><strong>Reporting on unreconciled books.</strong> Fathom faithfully charts whatever QuickBooks holds, errors included. The close comes first.</li>
+        <li><strong>Default targets.</strong> A default target gets ignored. Set targets from your own goals and benchmarks.</li>
+        <li><strong>Sharing the full P&amp;L to share one KPI.</strong> Anyone who sees the P&amp;L can work back to owner pay. A report that stops at the gross profit line solves it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq section ground-warm">
+  <div class="container">
+    <h2 class="reveal">Questions</h2>
+    <p class="sub reveal">The ones people actually ask on the first call</p>
+    <div class="faq-list reveal">
+      <details><summary><span>Does Fathom work with QuickBooks Online?</span><span class="plus" aria-hidden="true"></span></summary><p>Yes. Fathom reads directly from QuickBooks Online and builds dashboards, KPIs and cash flow forecasts from it. QuickBooks stays the single source of truth.</p></details>
+      <details><summary><span>Which KPIs should an agency track in Fathom?</span><span class="plus" aria-hidden="true"></span></summary><p>We build six groups: revenue (including mix by service line), profit (gross and operating margin, break-even, margin of safety), people cost, cash and runway, receivables and AR days, and year-to-date comparison against last year and forecast.</p></details>
+      <details><summary><span>What has to be in place in QuickBooks before Fathom?</span><span class="plus" aria-hidden="true"></span></summary><p>Reconciled accounts and a chart of accounts that separates revenue by service line, pass-throughs, delivery cost, overhead and owner pay. Without those splits Fathom can't show gross margin or people cost correctly.</p></details>
+      <details><summary><span>How often does the Fathom dashboard update?</span><span class="plus" aria-hidden="true"></span></summary><p>With each month-end close. On the Scale tier it is joined by a weekly financial report.</p></details>
+      <details><summary><span>Can Fathom forecast cash flow from QuickBooks?</span><span class="plus" aria-hidden="true"></span></summary><p>Yes. Fathom builds cash flow forecasts from the QuickBooks Online data alongside the dashboards, so the forecast starts from the same closed books as the reports.</p></details>
+      <details><summary><span>Do I get my own Fathom login?</span><span class="plus" aria-hidden="true"></span></summary><p>Yes. You get your own login, not a PDF. The dashboard is included on Growth and Scale, and is a $200 a month add-on on Starter.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="next-step" class="final next section ground-cobalt">
+  <div class="container">
+    <h2 class="reveal">Next step</h2>
+    <p class="lede reveal">Thirty minutes, and you'll know where you stand</p>
+    <p>Bring last month's P&amp;L. We'll tell you what it's actually saying about your margin, your owner pay and your next hire. If we're not the right people to fix it, we'll say so on the call.</p>
+    <div class="cta-row">
+      <a href="https://calendly.com/team-a9m/30min" target="_blank" rel="noopener" class="btn btn--lg" data-book>Book a call</a>
+    </div>
+    <p class="next-links"><a class="text-link" href="/agency-financial-dashboard/">See the KPI dashboard</a> <a class="text-link" href="/pricing/">See pricing</a></p>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <nav class="fres" aria-label="Resources">
+    <p class="fres-t">Resources</p>
+    <ul>
+      <li><a href="/results/">Results</a></li>
+      <li><a href="/bookkeeper-vs-cpa-vs-fractional-cfo/">Bookkeeper vs CPA vs fractional CFO</a></li>
+      <li><a href="/bookkeeping-for-marketing-agencies/">Bookkeeping for marketing agencies</a></li>
+      <li><a href="/accounting-for-marketing-agencies/">Accounting for marketing agencies</a></li>
+      <li><a href="/fractional-bookkeeper-for-agencies/">Fractional bookkeeper</a></li>
+      <li><a href="/fractional-cfo-for-agencies/">Fractional CFO for agencies</a></li>
+      <li><a href="/agency-financial-dashboard/">Agency financial dashboard</a></li>
+      <li><a href="/agency-financial-kpis/">Agency financial KPIs</a></li>
+      <li><a href="/fathom-quickbooks-for-agencies/">Fathom and QuickBooks</a></li>
+      <li><a href="/os-audit/">Agency Financial Audit</a></li>
+      <li><a href="/giveaway/">Bookkeeping giveaway</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+    </ul>
+  </nav>
+  <nav class="fres" aria-label="Benchmarks">
+    <p class="fres-t">Benchmarks</p>
+    <ul>
+      <li><a href="/agency-financial-os/">Agency Financial OS</a></li>
+      <li><a href="/agency-financial-os/profit-benchmarks/">Profit margin benchmarks</a></li>
+      <li><a href="/agency-financial-os/owner-pay/">Owner pay benchmarks</a></li>
+      <li><a href="/agency-financial-os/team-cost/">Team cost benchmarks</a></li>
+      <li><a href="/agency-financial-os/revenue-per-employee/">Revenue per employee</a></li>
+      <li><a href="/agency-financial-os/hiring-gate/">The hiring gate</a></li>
+    </ul>
+  </nav>
+  <div class="bar">
+    <a href="/" class="flogo"><span class="logo-art flogo-img" role="img" aria-label="We Got Your Books"></span></a>
+    <span class="fcopy">© <span data-year>2026</span> We Got Your Books. All rights reserved.</span>
+    <div class="flinks">
+      <a href="https://calendly.com/team-a9m/30min" target="_blank" data-book>Book a call</a>
+      <a href="/agencyos/">Free OS</a>
+    </div>
+    <script>document.querySelectorAll('[data-year]').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -462,6 +462,19 @@ td a { color: var(--link); font-weight: 600; }
 .crumbs [aria-current]{color:var(--charcoal);font-weight:700}
 .crumb-sep{color:var(--muted)}
 
+/* ── module pages: the benchmarks-in-practice section (build/modules-plus/) ── */
+.stitle ~ * a, .section-body > .band-inner > p a{color:var(--cobalt);text-decoration:underline;text-underline-offset:3px}
+.plus .section-body h4{font-size:var(--fs-body);line-height:1.35;font-weight:800;color:var(--fg);margin:0 0 var(--s-2)}
+.plus .plus-faq{padding:var(--s-4) 0;border-top:1px solid var(--rule)}
+.plus .plus-faq:last-of-type{border-bottom:1px solid var(--rule)}
+.plus .plus-faq p{margin:0}
+.plus .calc{margin:var(--s-4) 0 var(--s-5);padding-left:var(--s-5);font-variant-numeric:tabular-nums}
+.plus .calc li{margin:var(--s-2) 0;line-height:1.5}
+.plus .sources{margin:var(--s-3) 0 var(--s-5);padding-left:var(--s-5)}
+.plus .sources li{margin:var(--s-2) 0;line-height:1.5}
+.plus td{overflow-wrap:anywhere}
+.plus .section-body p a,.plus .section-body li a{color:var(--cobalt);text-decoration:underline;text-underline-offset:3px}
+
 /* ── Kit opt-in ── */
 .optin-wrap{background:var(--white);border:2px solid var(--charcoal);border-radius:var(--r-md);
   padding:var(--s-5);max-width:520px;margin:var(--s-5) 0}

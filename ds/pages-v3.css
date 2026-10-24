@@ -187,3 +187,8 @@
 .v3 .cody .quote figcaption img { width: 56px; height: 56px; border-radius: var(--r-pill); object-fit: cover; flex: none; }
 .v3 .vthumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 @media (max-width: 900px) { .v3 .cody { grid-template-columns: minmax(0, 1fr); } }
+
+/* A screenshot in a page body (Fathom page): a ruled frame, caption below */
+.v3 .shot { margin-top: var(--s-7); }
+.v3 .shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--r-md); }
+.v3 .shot figcaption { margin-top: var(--s-3); font-size: var(--fs-small); color: var(--fg-muted); }

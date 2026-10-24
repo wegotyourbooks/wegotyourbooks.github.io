@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="/ds/tokens.css?v=3af978792a">
 <link rel="stylesheet" href="/ds/components.css?v=e032a02945">
 <link rel="stylesheet" href="/ds/v2.css?v=0bae53d89b">
-<link rel="stylesheet" href="/agency-financial-os/os.css?v=eda45967bb">
+<link rel="stylesheet" href="/agency-financial-os/os.css?v=3d23f4162f">
 <script src="/ds/book.js?v=8c6389b87b" defer></script>
 <script src="/ds/v2.js?v=c450318967" defer></script>
 
@@ -89,6 +89,54 @@
       "@type": "ListItem",
       "position": 3,
       "name": "The Modern Agency Financial Tech Stack"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What accounting software should a marketing agency use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "QuickBooks Online. It is standard with CPAs and buyers, supports classes and locations for agency reporting, and the rest of the stack integrates into it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why keep one source of truth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When every tool feeds QuickBooks and reporting reads from it, the dashboard, the tax return and the forecast all start from the same numbers. Two sources mean two answers to the same question."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Fathom add on top of QuickBooks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dashboards, KPIs and cash flow forecasting that read directly from QuickBooks Online, built for owners who are not accountants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which business bank works best with this stack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mercury or another modern business bank. The module's reasons: faster access, cleaner integrations with QuickBooks, and an easy way to keep operating and reserve accounts separate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need every tool on day one?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "QuickBooks Online and a business bank come first. Add payroll, spend controls and dashboards as the team and the volume of transactions grow."
+      }
     }
   ]
 }
@@ -176,7 +224,81 @@
       <div class="mod-nav"><a class="mod-nav-link mod-nav-prev" href="/agency-financial-os/software-spend/"><span class="mod-nav-label">Previous</span>Software Cost System</a><a class="mod-nav-link mod-nav-next" href="/agency-financial-os/implementation/"><span class="mod-nav-label">Next</span>Implementation Checklist</a></div></div>
   </div>
 </section>
-<section class="doc-section odd" id="get-the-os">
+<section class="doc-section odd plus" id="benchmarks-in-practice">
+  <div class="section-band"><div class="band-inner"><div class="section-header reveal">
+    <div class="stitle"><h2>How the stack runs the monthly close</h2>
+      <span class="tagline">What each tool sends to QuickBooks, what to check each month, and one transaction followed from card to dashboard</span></div>
+  </div></div></div>
+  <div class="section-body"><div class="band-inner">
+<p>The stack above is the setup we use with agency clients: QuickBooks Online as the single source of truth, with Gusto, Ramp and the bank feeding it and Fathom reading from it. It works because every tool sends data in one direction. This section shows what each one sends and what the monthly close checks.</p>
+
+<h3>What each tool sends, and what to check each month</h3>
+<p>Source: the Agency Financial OS, Module 9, and the monthly close described in Module 10.</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Tool</th><th>Sends to QuickBooks</th><th>Monthly check</th></tr></thead>
+    <tbody>
+      <tr><td>Business bank</td><td>Every deposit and payment, by bank feed</td><td>Reconciled to the statement balance</td></tr>
+      <tr><td>Ramp</td><td>Card spend with receipts and categories</td><td>Every transaction coded, receipts attached for large or unusual items</td></tr>
+      <tr><td>Gusto</td><td>Payroll journal entries</td><td>Payroll mapped to the right accounts, delivery kept apart from overhead</td></tr>
+      <tr><td>QuickBooks Online invoicing</td><td>Invoices, payments and recurring billing</td><td>Receivables aged and followed up</td></tr>
+      <tr><td>Fathom</td><td>Reads from QuickBooks; sends nothing back</td><td>Dashboard refreshed after the close, KPIs reviewed</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Worked example: one card purchase, from swipe to dashboard</h3>
+<ul class="calc">
+  <li>A designer buys a stock image subscription on a Ramp virtual card and snaps the receipt</li>
+  <li>Ramp codes it to the software account and syncs it to QuickBooks with the receipt attached</li>
+  <li>At month-end, the card account is reconciled in QuickBooks along with every other account</li>
+  <li>Fathom refreshes from QuickBooks, and the purchase shows up in software spend as a percentage of revenue</li>
+  <li>The quarterly software review checks whether the tool passes the new tool rule in <a href="/agency-financial-os/software-spend/">software spend</a></li>
+</ul>
+<p>No one re-enters the purchase, and no reimbursement is needed, which is the point of putting card spend on Ramp.</p>
+
+<h3>The close, in the order the stack needs it</h3>
+<p>The order matters, because each step reads from the one before it. Source: the Agency Financial OS, Module 10, Phases 1, 2 and 7.</p>
+<ol class="calc">
+  <li>Bank and card feeds complete through the last day of the month</li>
+  <li>Every account reconciled to its statement, bank and Ramp cards included</li>
+  <li>Uncategorized and miscategorized transactions cleaned up</li>
+  <li>Payroll and contractor payments checked against the right accounts, delivery apart from overhead</li>
+  <li>Revenue checked against client invoices, so income maps to the right client and service</li>
+  <li>The P&amp;L closed by the set date, then Fathom refreshed and the KPIs reviewed</li>
+</ol>
+<p>Skip a step and the dashboard still updates, but it shows the wrong number with the same confidence as the right one. That is the main risk of a connected stack: errors travel as fast as data.</p>
+
+<h3>Questions</h3>
+<div class="plus-faq">
+  <h4>What accounting software should a marketing agency use?</h4>
+  <p>QuickBooks Online. It is standard with CPAs and buyers, supports classes and locations for agency reporting, and the rest of the stack integrates into it.</p>
+</div>
+<div class="plus-faq">
+  <h4>Why keep one source of truth?</h4>
+  <p>When every tool feeds QuickBooks and reporting reads from it, the dashboard, the tax return and the forecast all start from the same numbers. Two sources mean two answers to the same question.</p>
+</div>
+<div class="plus-faq">
+  <h4>What does Fathom add on top of QuickBooks?</h4>
+  <p>Dashboards, KPIs and cash flow forecasting that read directly from QuickBooks Online, built for owners who are not accountants.</p>
+</div>
+<div class="plus-faq">
+  <h4>Which business bank works best with this stack?</h4>
+  <p>Mercury or another modern business bank. The module's reasons: faster access, cleaner integrations with QuickBooks, and an easy way to keep operating and reserve accounts separate.</p>
+</div>
+<div class="plus-faq">
+  <h4>Do I need every tool on day one?</h4>
+  <p>QuickBooks Online and a business bank come first. Add payroll, spend controls and dashboards as the team and the volume of transactions grow.</p>
+</div>
+
+<h3>Sources</h3>
+<ul class="sources">
+  <li>The Agency Financial OS, Module 9 (the stack and how it connects), Module 8 (software rules) and Module 10 (monthly close steps).</li>
+</ul>
+<p>We run this stack as part of <a href="/bookkeeping-for-marketing-agencies/">bookkeeping for marketing agencies</a>, with the close finished on a set date each month. Its cost counts toward <a href="/agency-financial-os/software-spend/">software spend</a>, and the order to set it up in is in the <a href="/agency-financial-os/implementation/">implementation checklist</a>.</p>
+  </div></div>
+</section>
+<section class="doc-section even" id="get-the-os">
   <div class="section-band"><div class="band-inner"><div class="section-header reveal">
     <div class="stitle"><h2>Get the Agency Financial OS</h2>
       <span class="tagline">The full system, the calculator, and a weekly email for agency owners</span></div>
@@ -189,7 +311,7 @@
     </div>
   </div></div>
 </section>
-<section class="doc-section even ground-cobalt" id="next-step">
+<section class="doc-section odd ground-cobalt" id="next-step">
   <div class="section-band"><div class="band-inner"><div class="section-header reveal">
     <div class="stitle"><h2>Next Step</h2>
       <span class="tagline">Install this with someone who does it every day</span></div>
@@ -211,11 +333,25 @@
       <li><a href="/bookkeeper-vs-cpa-vs-fractional-cfo/">Bookkeeper vs CPA vs fractional CFO</a></li>
       <li><a href="/bookkeeping-for-marketing-agencies/">Bookkeeping for marketing agencies</a></li>
       <li><a href="/accounting-for-marketing-agencies/">Accounting for marketing agencies</a></li>
+      <li><a href="/fractional-bookkeeper-for-agencies/">Fractional bookkeeper</a></li>
       <li><a href="/fractional-cfo-for-agencies/">Fractional CFO for agencies</a></li>
       <li><a href="/agency-financial-dashboard/">Agency financial dashboard</a></li>
+      <li><a href="/agency-financial-kpis/">Agency financial KPIs</a></li>
+      <li><a href="/fathom-quickbooks-for-agencies/">Fathom and QuickBooks</a></li>
       <li><a href="/os-audit/">Agency Financial Audit</a></li>
       <li><a href="/giveaway/">Bookkeeping giveaway</a></li>
       <li><a href="/pricing/">Pricing</a></li>
+    </ul>
+  </nav>
+  <nav class="fres" aria-label="Benchmarks">
+    <p class="fres-t">Benchmarks</p>
+    <ul>
+      <li><a href="/agency-financial-os/">Agency Financial OS</a></li>
+      <li><a href="/agency-financial-os/profit-benchmarks/">Profit margin benchmarks</a></li>
+      <li><a href="/agency-financial-os/owner-pay/">Owner pay benchmarks</a></li>
+      <li><a href="/agency-financial-os/team-cost/">Team cost benchmarks</a></li>
+      <li><a href="/agency-financial-os/revenue-per-employee/">Revenue per employee</a></li>
+      <li><a href="/agency-financial-os/hiring-gate/">The hiring gate</a></li>
     </ul>
   </nav>
   <div class="bar">
