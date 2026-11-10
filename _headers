@@ -1,0 +1,4 @@
+# Netlify headers. The 2026 report PDF is the gated download sent by the Kit incentive email;
+# keep it out of search so the public summary page ranks instead of the file.
+/state-of-agency-finances-2026/wgyb-2026-state-of-agency-finances.pdf
+  X-Robots-Tag: noindex
